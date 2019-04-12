@@ -1,2 +1,0 @@
-#N canvas 755 127 546 431 10;
-#X obj 152 35 project/preset-manager zip;

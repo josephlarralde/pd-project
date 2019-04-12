@@ -1,12 +1,13 @@
-#N canvas 1 23 582 639 10;
-#X obj 233 112 text define -k sub-ctlbus;
+#N canvas 1 23 779 639 10;
+#X obj 233 230 text define -k sub-ctlbus;
 #A set aaa \; bbb \; ccc \;;
 #X obj 228 14 cnv 15 160 45 empty empty project 4 11 0 14 -233017 -66577
 0;
 #X msg 233 37 open;
 #X msg 267 37 save;
 #X msg 301 37 saveas;
-#X msg 386 92 /Users/larralde/Desktop/bloup;
+#X msg 386 92 /Users/larralde/Projects/git-repositories/josephlarralde/pd-project/tests/project-files
+;
 #X obj 386 71 loadbang;
 #N canvas 32 142 592 605 seq 0;
 #X obj 360 378 makefilename \$0-%i-seq-i;
@@ -78,17 +79,22 @@
 #X connect 31 0 5 1;
 #X connect 32 0 5 1;
 #X connect 35 0 13 1;
-#X restore 233 260 pd seq;
+#X restore 234 405 pd seq;
 #X obj 19 607 s gluck-preset-cmd;
 #X obj 19 14 project/preset-manager all sub;
 #X obj 233 92 project/file-manager sub;
-#X obj 233 240 module-test gluck sub snds;
-#X obj 233 220 s sub-ctlbus-1;
-#X obj 236 201 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 233 317 module-test gluck sub snds;
+#X obj 233 297 s sub-ctlbus-1;
+#X obj 236 278 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 0;
-#N canvas 0 23 864 634 soundbank 0;
-#X obj 16 13 project/soundbank snds;
-#X restore 233 132 pd soundbank;
+#N canvas 0 23 864 634 soundbank 1;
+#X obj 14 13 project/soundbank snds sub;
+#X restore 233 138 pd soundbank;
+#X text 393 229 < define your ctlbus names here;
+#X obj 233 157 r~ snds-soundbank-audio-out;
+#X obj 233 183 dac~ 1 2;
+#X obj 233 363 dac~ 1 2;
+#X obj 233 337 r~ gluck-audio-out;
 #X connect 2 0 10 0;
 #X connect 3 0 10 0;
 #X connect 4 0 10 0;
@@ -96,3 +102,7 @@
 #X connect 9 0 8 0;
 #X connect 10 1 5 0;
 #X connect 13 0 12 0;
+#X connect 16 0 17 0;
+#X connect 16 0 17 1;
+#X connect 19 0 18 0;
+#X connect 19 0 18 1;

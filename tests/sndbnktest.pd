@@ -1,6 +1,0 @@
-#N canvas 0 23 881 697 10;
-#X obj 17 15 project/soundbank yo;
-#X obj 17 657 dac~ 1 2;
-#X obj 17 627 r~ yo-soundbank-audio-out;
-#X connect 2 0 1 0;
-#X connect 2 0 1 1;

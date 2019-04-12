@@ -1,0 +1,16 @@
+all machin detune 0;
+all machin play 1 1 1 0.5 0.1 0 0 0;
+all machin loop 2 0 0 1 1 0 0 0;
+all machin pitch 1 0 0 0 1 0 0 0;
+all machin sound 1;
+all truc detune 0;
+all truc play 0 0 1 1 0 0 0 0;
+all truc loop 0 0 0 1 1 0 0 0;
+all truc pitch 0 0 0 0 1 0 0 0;
+all truc sound 2;
+bak bazak 81 0 0 0 1 1 0 0 0 0 0 0.05 1 1 1 0 0 0 0 10 1 1 1 1 0 0
+0 120 1 1 0 0 0 0 0 1 1 1 12 0 0 0 0 0 1 1 1 0 0 0 0 0.2 1 1 1 0 0
+0 0 0.5 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0;
+bak bazik 81 0 0 0 1 1 0 0 0 0 0 0.05 1 1 1 0 0 0 0 10 1 1 1 1 0 0
+0 120 1 1 0 0 0 0 0 1 1 1 12 0 0 0 0 0 1 1 1 0 0 0 0 0.2 1 1 1 0 0
+0 0 0.5 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0;
