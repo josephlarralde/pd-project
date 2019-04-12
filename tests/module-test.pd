@@ -1,26 +1,30 @@
-#N canvas 141 81 616 659 10;
-#X floatatom 458 190 5 0 0 1 detune #0-detune-i #0-detune-o, f 5;
-#X floatatom 458 208 5 0 0 1 pitch #0-pitch-i #0-pitch-o, f 5;
-#X text 79 40 arguments :;
-#X text 79 56 <module_name> <project_name>;
-#X text 76 453 [parameter pitch \$1 \$2 \$0] :;
-#X obj 360 377 module-preset \$1 \$2 \$0;
-#X obj 80 111 parameter-simple detune \$1 \$2 \$0;
-#X text 76 140 [parameter-trig play \$1 \$2 \$0] :;
-#X obj 458 226 bng 15 250 50 0 \$0-play-o \$0-play-i play 17 7 0 10
+#N canvas 587 23 615 639 10;
+#X floatatom 457 192 5 0 0 1 detune #0-detune-i #0-detune-o, f 5;
+#X floatatom 457 210 5 0 0 1 pitch #0-pitch-i #0-pitch-o, f 5;
+#X text 37 18 arguments :;
+#X obj 474 228 bng 15 250 50 0 \$0-play-o \$0-play-i play 17 7 0 10
 -262144 -1 -1;
-#X text 76 296 [parameter-toggle loop \$1 \$2 \$0] :;
-#X obj 458 244 tgl 15 0 \$0-loop-o \$0-loop-i loop 17 7 0 10 -262144
+#X obj 474 246 tgl 15 0 \$0-loop-o \$0-loop-i loop 17 7 0 10 -262144
 -1 -1 0 1;
-#X text 302 215 corresponding ui >>>>>>>;
-#X text 307 350 there must be one like this per module :;
-#X text 281 111 < for non-mappable single value parameters;
-#X obj 385 496 s~ \$1-audio-out-left;
-#X obj 402 514 s~ \$1-audio-out-right;
-#X obj 385 560 s sub-ctlbus-1;
-#X obj 388 540 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 0;
-#X obj 80 473 parameter pitch \$1 \$2 \$0;
-#X obj 80 316 parameter-toggle loop \$1 \$2 \$0;
-#X obj 80 160 parameter-trig play \$1 \$2 \$0;
-#X connect 17 0 16 0;
+#X text 301 217 corresponding ui >>>>>>>;
+#X text 322 320 there must be one like this per module :;
+#X text 286 89 < for non-mappable single value parameters;
+#X obj 38 89 project/parameter-simple detune \$1 \$2 \$0;
+#X obj 38 138 project/parameter-trig play \$1 \$2 \$0;
+#X text 34 118 [project/parameter-trig play \$1 \$2 \$0] :;
+#X text 34 274 [project/parameter-toggle loop \$1 \$2 \$0] :;
+#X obj 38 294 project/parameter-toggle loop \$1 \$2 \$0;
+#X obj 347 342 project/module-preset \$1 \$2 \$0;
+#X text 34 431 [project/parameter pitch \$1 \$2 \$0] :;
+#X obj 38 451 project/parameter pitch \$1 \$2 \$0;
+#X text 37 34 <module_name> <project_name> <soundbank_name>;
+#X obj 38 69 project/parameter-simple sound \$1 \$2 \$0;
+#X text 325 155 [project/sound-selector sound \$3 \$0] :;
+#X obj 373 538 tabread4~;
+#X obj 373 558 s~ \$1-audio-out;
+#X text 373 518 ... TODO;
+#X obj 329 174 project/sound-selector sound \$3 \$0;
+#X obj 373 464 r \$0-sound-info;
+#X obj 373 483 print;
+#X connect 19 0 20 0;
+#X connect 23 0 24 0;
