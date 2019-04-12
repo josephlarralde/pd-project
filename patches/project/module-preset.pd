@@ -1,0 +1,69 @@
+#N canvas 523 129 609 502 10;
+#N canvas 0 23 493 371 append-filename 0;
+#X obj 140 52 inlet;
+#X obj 138 294 outlet;
+#X obj 246 200 list fromsymbol;
+#X obj 138 200 list fromsymbol;
+#X obj 138 260 list tosymbol;
+#X obj 246 140 loadbang;
+#X obj 138 179 symbol;
+#X obj 138 240 list append;
+#X obj 246 160 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 246 179 symbol /\$1-presets.txt;
+#X connect 0 0 6 0;
+#X connect 2 0 7 1;
+#X connect 3 0 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 8 0;
+#X connect 6 0 3 0;
+#X connect 7 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 2 0;
+#X restore 227 286 pd append-filename;
+#N canvas 0 23 493 371 append-filename 0;
+#X obj 140 52 inlet;
+#X obj 138 294 outlet;
+#X obj 246 200 list fromsymbol;
+#X obj 138 200 list fromsymbol;
+#X obj 138 260 list tosymbol;
+#X obj 246 140 loadbang;
+#X obj 138 179 symbol;
+#X obj 138 240 list append;
+#X obj 246 160 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 246 179 symbol /\$1-presets.txt;
+#X connect 0 0 6 0;
+#X connect 2 0 7 1;
+#X connect 3 0 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 8 0;
+#X connect 6 0 3 0;
+#X connect 7 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 2 0;
+#X restore 184 328 pd append-filename;
+#X obj 184 348 list prepend read;
+#X obj 184 187 route open save;
+#X obj 227 306 list prepend write;
+#X obj 197 391 list trim;
+#X obj 197 411 text define -k \$1-presets;
+#A set bak bazak 81 0 0 0 1 1 0 0 0 0 0 0.05 1 1 1 0 0 0 0 10 1 1 1
+1 0 0 0 120 1 1 0 0 0 0 0 1 1 1 12 0 0 0 0 0 1 1 1 0 0 0 0 0.2 1 1
+1 0 0 0 0 0.5 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0 \; bak bazik
+81 0 0 0 1 1 0 0 0 0 0 0.05 1 1 1 0 0 0 0 10 1 1 1 1 0 0 0 120 1 1
+0 0 0 0 0 1 1 1 12 0 0 0 0 0 1 1 1 0 0 0 0 0.2 1 1 1 0 0 0 0 0.5 1
+1 1 0 0 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0 \;;
+#X obj 184 112 r \$1-preset-cmd;
+#X obj 196 136 r \$2-file-cmd;
+#X obj 271 230 s \$3-preset-cmd;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 1 0;
+#X connect 3 1 0 0;
+#X connect 3 2 9 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;

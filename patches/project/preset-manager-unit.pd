@@ -1,0 +1,26 @@
+#N canvas 722 263 450 300 10;
+#X symbolatom 50 50 25 0 0 0 - #1-#2-preset-i #1-#2-preset-o, f 25
+;
+#X obj 202 50 bng 15 250 50 0 \$1-\$2-recall-o \$1-\$2-recall-i R 5
+8 0 10 -262144 -262144 -1;
+#X obj 217 50 bng 15 250 50 0 \$1-\$2-write-o \$1-\$2-write-i W 5 8
+0 10 -262144 -262144 -1;
+#X obj 232 50 bng 15 250 50 0 \$1-\$2-clear-o \$1-\$2-clear-i C 4 8
+0 10 -262144 -1 -1;
+#X text 55 80 arguments : <parent_\$0> <index>;
+#X obj 66 178 r \$1-\$2-recall-o;
+#X obj 66 198 f \$2;
+#X obj 66 218 s \$1-recall-o;
+#X obj 170 198 f \$2;
+#X obj 170 178 r \$1-\$2-write-o;
+#X obj 170 218 s \$1-write-o;
+#X obj 268 198 f \$2;
+#X obj 268 178 r \$1-\$2-clear-o;
+#X obj 268 218 s \$1-clear-o;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X coords 0 -1 1 1 197 15 2 50 50;
