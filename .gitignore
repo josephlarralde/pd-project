@@ -3,6 +3,7 @@
 
 *.zip
 
+build/
 origins/
 
 examples/*

@@ -1,0 +1,17 @@
+#N canvas 0 25 207 151 10;
+#N canvas 0 25 434 251 META 0;
+#X text 26 146 AUTHOR Joseph Larralde <joseph.larralde@gmail.com>,
+f 59;
+#X text 26 129 LICENSE BSD-3-Clause, f 59;
+#X text 26 163 HELP_PATCHES_AUTHOR Joseph Larralde, f 59;
+#X text 26 78 LIBRARY project, f 59;
+#X text 26 95 VERSION 0.1.0, f 59;
+#X text 26 112 RELEASE_DATE July 21st 2023, f 59;
+#X text 26 180 WEBSITE https://github.com/josephlarralde/pd-project
+, f 59;
+#X text 26 14 KEYWORDS project utilities modules parameters mapping
+soundbank;
+#X text 26 40 DESCRIPTION some utilities to design modules with mappable
+parameters \, and create projects based on these modules with a soundbank
+and preset management;
+#X restore 79 63 pd META;
