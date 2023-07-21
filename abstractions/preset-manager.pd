@@ -1,4 +1,4 @@
-#N canvas 362 129 974 673 10;
+#N canvas 365 101 974 673 10;
 #X obj 356 304 text define \$1-presets;
 #N canvas 621 78 468 470 refreshlist 0;
 #X obj 83 154 until;
@@ -8,7 +8,7 @@
 #X obj 108 175 + 1;
 #X obj 83 196 t f f;
 #X obj 83 62 bng 15 250 50 0 empty empty refresh_presets_list 17 7
-0 10 -262144 -1 -1;
+0 10 #fcfcfc #000000 #000000;
 #X obj 83 107 text size \$1-presets;
 #X obj 83 219 text get \$1-presets;
 #X obj 83 81 t b b;
@@ -149,15 +149,15 @@
 #X connect 12 1 3 0;
 #X restore 643 77 pd recallpreset;
 #X obj 492 620 send;
-#X floatatom 492 552 5 0 0 0 - - -, f 5;
+#X floatatom 492 552 5 0 0 0 - - - 0;
 #X obj 492 571 t b f;
 #X obj 289 620 send;
 #X obj 289 571 t b f;
 #X obj 289 520 until;
 #X obj 289 542 f;
 #X obj 289 478 t b b;
-#X obj 289 457 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 289 457 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 314 542 - 1;
 #N canvas 47 34 369 685 overwrite-or-writenew 0;
 #X obj 92 258 sel -1;
@@ -177,14 +177,14 @@
 #X msg 204 228 0;
 #X obj 132 177 t b a;
 #X msg 176 228 1;
-#X obj 159 111 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 159 111 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 132 51 t a a;
 #X obj 159 308 spigot 1;
 #X obj 235 137 route 32;
 #X obj 290 137 route 32;
-#X obj 290 160 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 290 160 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 216 205 spigot 1;
 #X obj 216 111 t b a b;
 #X msg 261 181 1;
@@ -372,8 +372,8 @@
 #X restore 643 516 pd write-colors;
 #X obj 802 281 text get \$1-presets;
 #X obj 692 336 symbol;
-#X obj 692 284 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 692 284 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 738 250 t b f;
 #X obj 692 360 spigot;
 #X obj 750 360 spigot;
@@ -397,8 +397,8 @@
 #X obj 246 140 loadbang;
 #X obj 138 179 symbol;
 #X obj 138 240 list append;
-#X obj 246 160 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 246 160 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 246 179 symbol /\$1-presets.txt;
 #X connect 0 0 6 0;
 #X connect 2 0 7 1;
@@ -419,8 +419,8 @@
 #X obj 246 140 loadbang;
 #X obj 138 179 symbol;
 #X obj 138 240 list append;
-#X obj 246 160 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 246 160 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 246 179 symbol /\$1-presets.txt;
 #X connect 0 0 6 0;
 #X connect 2 0 7 1;
@@ -444,8 +444,8 @@
 #X obj 329 271 t b a;
 #X obj 329 357 t b b;
 #X obj 329 189 t a b;
-#X obj 537 304 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 537 304 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 537 283 loadbang;
 #X obj 862 160 list split 1;
 #X obj 862 180 list append \$1;
@@ -454,8 +454,6 @@
 #X obj 329 58 r \$2-file-cmd;
 #X obj 451 174 openpanel;
 #X obj 524 174 savepanel;
-#X obj 524 155 r \$0-write-o;
-#X obj 451 155 r \$0-read-o;
 #X obj 451 193 list prepend read;
 #X obj 524 212 list prepend write;
 #X obj 329 77 route open save;
@@ -463,21 +461,23 @@
 #X text 443 47 <module_name> <project_name>;
 #X obj 525 592 makefilename \$0-%i-recall-i;
 #X obj 322 592 makefilename \$0-%i-clear-i;
-#X obj 312 334 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 21 36 cnv 15 199 123 empty empty empty 20 9 0 12 -1 -66577 0
-;
-#X obj 21 21 cnv 15 199 17 empty empty \$1 38 9 0 11 -228856 -66577
+#X obj 312 334 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 21 36 cnv 15 199 123 empty empty empty 20 9 0 12 #000000 #404040
 0;
-#X obj 21 40 cnv 15 199 568 empty empty empty 4 10 0 12 -262144 -33289
+#X obj 21 21 cnv 15 199 17 \$0-read-file-o \$0-read-file-i \$1 38 9
+0 11 #dcdcdc #404040 0;
+#X obj 21 40 cnv 15 199 568 empty empty empty 4 10 0 12 #fcfcfc #202020
 0;
-#X symbolatom 22 41 25 0 0 0 - #0-preset-i #0-preset-o, f 25;
-#X obj 22 22 bng 15 250 50 0 \$0-read-o \$0-read-i R 5 8 0 10 -262144
--262144 -1;
-#X obj 37 22 bng 15 250 50 0 \$0-write-o \$0-write-i W 5 8 0 10 -262144
--262144 -1;
-#X obj 21 58 cnv 5 199 5 empty empty empty 4 9 0 11 -1 -66577 0;
-#X obj 21 59 cnv 3 199 3 empty empty empty 4 9 0 11 -228856 -1 0;
+#X symbolatom 22 41 25 0 0 0 - \$0-preset-i \$0-preset-o 0;
+#X obj 22 22 bng 15 250 50 0 \$0-read-o \$0-read-i R 5 8 0 10 #fcfcfc
+#fcfcfc #000000;
+#X obj 37 22 bng 15 250 50 0 \$0-write-file-o \$0-write-file-i W 5
+8 0 10 #fcfcfc #fcfcfc #000000;
+#X obj 21 58 cnv 5 199 5 empty empty empty 4 9 0 11 #000000 #404040
+0;
+#X obj 21 59 cnv 3 199 3 empty empty empty 4 9 0 11 #dcdcdc #000000
+0;
 #X obj 22 65 project/preset-manager-unit \$0 0;
 #X obj 22 82 project/preset-manager-unit \$0 1;
 #X obj 22 99 project/preset-manager-unit \$0 2;
@@ -512,6 +512,8 @@
 #X obj 22 592 project/preset-manager-unit \$0 31;
 #X msg 289 499 32;
 #X msg 318 499 31;
+#X obj 524 136 r \$0-write-file-o;
+#X obj 451 155 r \$0-read-file-o;
 #X connect 2 0 25 0;
 #X connect 2 1 56 0;
 #X connect 3 0 50 0;
@@ -520,14 +522,14 @@
 #X connect 4 1 56 0;
 #X connect 6 0 7 0;
 #X connect 7 0 5 0;
-#X connect 7 1 70 0;
+#X connect 7 1 68 0;
 #X connect 9 0 8 0;
-#X connect 9 1 71 0;
+#X connect 9 1 69 0;
 #X connect 10 0 11 0;
 #X connect 11 0 14 0;
 #X connect 11 0 9 0;
-#X connect 12 0 113 0;
-#X connect 12 1 114 0;
+#X connect 12 0 111 0;
+#X connect 12 1 112 0;
 #X connect 13 0 12 0;
 #X connect 14 0 11 1;
 #X connect 15 0 50 0;
@@ -581,18 +583,18 @@
 #X connect 57 0 58 0;
 #X connect 58 0 59 0;
 #X connect 59 0 39 0;
-#X connect 60 0 67 0;
-#X connect 61 0 65 0;
-#X connect 62 0 66 0;
-#X connect 63 0 62 0;
-#X connect 64 0 61 0;
-#X connect 65 0 44 0;
-#X connect 66 0 44 0;
-#X connect 67 0 41 0;
-#X connect 67 1 40 0;
-#X connect 70 0 5 1;
-#X connect 71 0 8 1;
-#X connect 72 0 52 0;
-#X connect 113 0 10 0;
-#X connect 114 0 11 1;
+#X connect 60 0 65 0;
+#X connect 61 0 63 0;
+#X connect 62 0 64 0;
+#X connect 63 0 44 0;
+#X connect 64 0 44 0;
+#X connect 65 0 41 0;
+#X connect 65 1 40 0;
+#X connect 68 0 5 1;
+#X connect 69 0 8 1;
+#X connect 70 0 52 0;
+#X connect 111 0 10 0;
+#X connect 112 0 11 1;
+#X connect 113 0 62 0;
+#X connect 114 0 61 0;
 #X coords 0 -1 1 1 201 589 2 20 20;

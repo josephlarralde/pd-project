@@ -47,23 +47,17 @@
 #X obj 184 187 route open save;
 #X obj 227 306 list prepend write;
 #X obj 197 391 list trim;
-#X obj 197 411 text define -k \$1-presets;
-#A set bak bazak 81 0 0 0 1 1 0 0 0 0 0 0.05 1 1 1 0 0 0 0 10 1 1 1
-1 0 0 0 120 1 1 0 0 0 0 0 1 1 1 12 0 0 0 0 0 1 1 1 0 0 0 0 0.2 1 1
-1 0 0 0 0 0.5 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0 \; bak bazik
-81 0 0 0 1 1 0 0 0 0 0 0.05 1 1 1 0 0 0 0 10 1 1 1 1 0 0 0 120 1 1
-0 0 0 0 0 1 1 1 12 0 0 0 0 0 1 1 1 0 0 0 0 0.2 1 1 1 0 0 0 0 0.5 1
-1 1 0 0 0 0 1 1 1 1 0 0 0 0 0 1 1 1 0 0 0 \;;
 #X obj 184 112 r \$1-preset-cmd;
 #X obj 196 136 r \$2-file-cmd;
 #X obj 271 230 s \$3-preset-cmd;
+#X obj 197 411 text define \$1-presets;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 5 0;
 #X connect 3 0 1 0;
 #X connect 3 1 0 0;
-#X connect 3 2 9 0;
+#X connect 3 2 8 0;
 #X connect 4 0 5 0;
-#X connect 5 0 6 0;
+#X connect 5 0 9 0;
+#X connect 6 0 3 0;
 #X connect 7 0 3 0;
-#X connect 8 0 3 0;

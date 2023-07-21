@@ -1,4 +1,4 @@
-#N canvas 781 23 632 639 10;
+#N canvas 779 23 632 639 10;
 #X floatatom 457 213 5 0 0 1 detune #0-detune-i #0-detune-o, f 5;
 #X floatatom 457 231 5 0 0 1 pitch #0-pitch-i #0-pitch-o, f 5;
 #X text 37 18 arguments :;
@@ -158,7 +158,7 @@
 #X restore 330 566 pd engine;
 #X obj 329 382 r \$0-sound-info;
 #X obj 329 401 list prepend set;
-#X msg 329 439 snds-soundbank-array-0 0 44100 0 2;
+#X msg 329 439 snds-soundbank-array-1 599669 44100 13597.9 2;
 #X obj 329 420 list trim;
 #X obj 342 490 r \$0-loop-o;
 #X obj 355 509 r \$0-pitch-o;

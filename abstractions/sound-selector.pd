@@ -23,8 +23,23 @@
 #X text 326 359 < arrayname samples samplerate duration channels;
 #X obj 222 380 list;
 #X obj 50 193 t b b;
-#X obj 77 360 text get \$2-soundbank;
-#X msg 77 339 0;
+#X obj 77 374 text get \$2-soundbank;
+#X msg 77 353 0;
+#N canvas 0 23 450 300 set-line-zero 0;
+#X obj 146 12 inlet;
+#X obj 146 213 outlet;
+#X text 54 241 filename \, abspath \, arrayname \, samples \, samplerate
+\, headersize \, channels \, bytespersample \, endianness (l / b);
+#X obj 146 142 list;
+#X obj 146 96 pack s f 44100 f f f;
+#X msg 146 119 . . \$1 0 44100 0 1 2 l;
+#X obj 146 66 makefilename \$2-soundbank-array-0;
+#X connect 0 0 6 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X restore 77 318 pd set-line-zero;
 #X connect 0 0 21 0;
 #X connect 0 1 15 0;
 #X connect 1 0 2 0;
@@ -45,7 +60,7 @@
 #X connect 18 0 20 0;
 #X connect 20 0 12 0;
 #X connect 21 0 1 0;
-#X connect 21 1 23 0;
-#X connect 22 0 16 0;
+#X connect 21 1 24 0;
 #X connect 23 0 22 0;
+#X connect 24 0 16 0;
 #X coords 0 -1 1 1 160 15 2 50 50;

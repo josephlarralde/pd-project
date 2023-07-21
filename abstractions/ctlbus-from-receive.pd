@@ -1,0 +1,13 @@
+#N canvas 305 352 450 300 10;
+#X obj 77 130 f;
+#X text 181 41 arguments : <project_name>;
+#X text 253 56 <receive_name>;
+#X text 253 71 <ctlbus_index>;
+#X obj 87 110 r \$1-ctlbus-\$3-get;
+#X obj 87 150 s \$1-ctlbus-\$3-source;
+#X obj 77 170 s \$1-ctlbus-\$3;
+#X obj 77 58 r \$2;
+#X connect 0 0 5 0;
+#X connect 0 0 6 0;
+#X connect 4 0 0 0;
+#X connect 7 0 0 0;

@@ -1,6 +1,20 @@
 # project
 
-### a collection of GUI and non-GUI abstractions for project management in pure data vanilla
+### a collection of pd-vanilla abstractions for project management
+
+The **project** library provides a framework to build custom GUI modules, based on a set of components that are useful in a typical live electronic music performance :
+
+* a soundbank module
+* a preset management module
+* a project management abstraction
+* parameter mapping modules based on a bus system
+* abstractions to forward a variety of input types to the bus sytem
+
+The basic principle is that any parameter module is exposed to the preset system, including its mapping settings, and its whole state can be saved and restored by any preset manager module.
+The soundbank has its own backup system.
+All soundbank and preset manager modules should be exposed to the project management abstraction, allowing to save and restore the whole project's data.
+
+, including a soundbank module, a preset management module, parameter mapping modules based on a bus system, abstractions to forward a variety of input types to the bus sytem, project files management abstractions.
 
 This library is a work in progress, but most of it is functional. It consists in a number of utilities to include in your patches which allow you to load and save "projects" (aka folders containing a collection of all files needed by the patch to perform a particular project).
 

@@ -1,0 +1,57 @@
+#N canvas 159 80 782 640 10;
+#X obj 230 230 text define -k sub-ctlbus;
+#A set pad-1 \; pad-2 \; pad-3 \; pad-4 \; pad-5 \; pad-6 \; pad-7
+\; pad-8 \; pad-9 \; pad-10 \; pad-11 \; pad-12 \; pad-13 \; pad-14
+\; pad-15 \; pad-16 \; fader-1 \; fader-2 \; fader-3 \; fader-4 \;
+knob-1 \; knob-2 \; knob-3 \; knob-4 \; knob-5 \; knob-6 \; knob-7
+\; knob-8 \; padnote-1 \; padnote-2 \; padnote-3 \; padnote-4 \; padnote-5
+\; padnote-6 \; padnote-7 \; padnote-8 \; padnote-9 \; padnote-10 \;
+padnote-11 \; padnote-12 \; padnote-13 \; padnote-14 \; padnote-15
+\; padnote-16 \;;
+#X obj 225 14 cnv 15 160 45 empty empty project 4 11 0 14 #e0e0e0 #404040
+0;
+#X msg 230 37 open;
+#X msg 264 37 save;
+#X msg 298 37 saveas;
+#X msg 383 92 /Users/larralde/Projects/git-repositories/josephlarralde/pd-project/examples/project2-files
+;
+#X obj 383 71 loadbang;
+#X obj 16 607 s gluck-preset-cmd;
+#X obj 16 14 project/preset-manager all sub;
+#X obj 230 92 project/file-manager sub;
+#X obj 230 317 module-test gluck sub snds;
+#X obj 230 297 s sub-ctlbus-1;
+#X obj 233 278 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 0;
+#X text 390 230 < define your ctlbus names here;
+#X obj 230 157 r~ snds-soundbank-audio-out;
+#X obj 230 183 dac~ 1 2;
+#X obj 230 363 dac~ 1 2;
+#X obj 230 337 r~ gluck-audio-out;
+#N canvas 116 25 864 634 soundbank 0;
+#X obj 14 13 project/soundbank snds sub;
+#X restore 230 138 pd soundbank;
+#X obj 340 400 jl/keyboard 0 1 1;
+#X obj 350 517 send;
+#X obj 396 480 makefilename sub-ctlbus-%i;
+#X obj 340 440 unpack f f;
+#X msg 340 420 \$2 \$1;
+#X obj 396 460 + 1;
+#X text 452 400 < simulate pads with keyboard;
+#X connect 2 0 9 0;
+#X connect 3 0 9 0;
+#X connect 4 0 9 0;
+#X connect 5 0 9 1;
+#X connect 8 0 7 0;
+#X connect 9 1 5 0;
+#X connect 12 0 11 0;
+#X connect 14 0 15 0;
+#X connect 14 0 15 1;
+#X connect 17 0 16 0;
+#X connect 17 0 16 1;
+#X connect 19 0 23 0;
+#X connect 21 0 20 1;
+#X connect 22 0 20 0;
+#X connect 22 1 24 0;
+#X connect 23 0 22 0;
+#X connect 24 0 21 0;
