@@ -1,17 +1,18 @@
 #N canvas 411 82 939 711 10;
-#X obj 51 61 cnv 15 99 15 empty empty empty 20 9 0 12 -1 -66577 0;
-#X obj 51 70 cnv 15 99 102 empty empty empty 20 12 0 14 -262144 -66577
+#X obj 51 61 cnv 15 99 15 empty empty empty 20 9 0 12 #000000 #404040
 0;
-#X floatatom 69 88 2 1 99 0 - #0-ctlbus-i #0-ctlbus-o, f 2;
-#X symbolatom 87 88 10 0 0 0 - #0-ctlname-i #0-ctlname-o, f 10;
+#X obj 51 70 cnv 15 99 102 empty empty empty 20 12 0 14 #fcfcfc #404040
+0;
+#X floatatom 69 88 2 1 99 0 - \$0-ctlbus-i \$0-ctlbus-o 0;
+#X symbolatom 87 88 10 0 0 0 - \$0-ctlname-i \$0-ctlname-o 0;
 #X obj 50 69 vradio 17 1 0 2 \$0-mode-o \$0-mode-i empty 0 -8 0 10
--262144 -1 -1 0;
-#X obj 51 51 cnv 15 99 17 empty empty \$1 4 9 0 11 -228856 -66577 0
-;
-#X floatatom 105 105 7 0 0 0 hithresh #0-hithresh-i #0-hithresh-o,
-f 7;
-#X floatatom 105 122 7 0 0 0 lothresh #0-lothresh-i #0-lothresh-o,
-f 7;
+#fcfcfc #000000 #000000 0;
+#X obj 51 51 cnv 15 99 17 empty empty \$1 4 9 0 11 #dcdcdc #404040
+0;
+#X floatatom 105 105 7 0 0 0 hithresh \$0-hithresh-i \$0-hithresh-o
+0;
+#X floatatom 105 122 7 0 0 0 lothresh \$0-lothresh-i \$0-lothresh-o
+0;
 #X obj 583 326 loadbang;
 #X obj 272 304 t a;
 #X msg 583 346 1;
@@ -158,7 +159,7 @@ f 7;
 #X obj 637 449 loadbang;
 #X msg 637 469 0;
 #X obj 662 498 s \$0-mode-i;
-#X floatatom 545 143 5 0 0 0 - - -, f 5;
+#X floatatom 545 143 5 0 0 0 - - - 0;
 #X obj 545 162 t f f;
 #X obj 140 335 spigot;
 #X obj 222 249 == 0;
@@ -170,12 +171,12 @@ f 7;
 #X obj 203 180 t f f f;
 #X obj 140 355 t f f f;
 #X obj 120 482 s \$0-fix-for-preset;
-#X obj 134 139 tgl 15 0 \$0-togglemode-o \$0-togglemode-i toggle_mode
--68 7 0 10 -262144 -1 -1 0 1;
+#X obj 134 139 tgl 15 0 \$0-togglemode-o \$0-togglemode-i toggle\\\ mode
+-68 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 134 156 tgl 15 0 \$0-invert-o \$0-invert-i invert -38 7 0 10
--262144 -1 -1 0 1;
-#X obj 69 71 tgl 15 0 \$0-fix-o \$0-fix-i empty 17 7 0 10 -262144 -1
--1 0 1;
+#fcfcfc #000000 #000000 0 1;
+#X obj 69 71 tgl 15 0 \$0-fix-o \$0-fix-i empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 287 451 sel 0;
 #X obj 316 470 t b;
 #X msg 316 489 1;
@@ -273,14 +274,14 @@ f 7;
 #X obj 136 266 spigot;
 #X obj 185 226 t f f;
 #X obj 212 246 == 0;
-#X obj 185 207 tgl 15 0 empty empty invert 17 7 0 10 -262144 -1 -1
-0 1;
+#X obj 185 207 tgl 15 0 empty empty invert 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 111 52 t f f;
 #X obj 111 176 spigot;
 #X obj 164 136 t f f;
 #X obj 191 156 == 0;
-#X obj 164 117 tgl 15 0 empty empty toggle_mode 17 7 0 10 -262144 -1
--1 0 1;
+#X obj 164 117 tgl 15 0 empty empty toggle_mode 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 111 29 inlet;
 #X obj 179 327 outlet;
 #X obj 283 30 inlet;
@@ -336,10 +337,10 @@ f 7;
 #X obj 76 249 s pd-\$0-receive-ctlbus;
 #X obj 49 296 s \$0-ctlbus-get;
 #N canvas 448 72 536 411 \$0-receive-ctlbus 0;
-#X obj 50 50 receive 1383-ctlbus-get;
-#X obj 50 100 send 0-ctlbus-1-get;
-#X obj 50 150 receive 0-ctlbus-1;
-#X obj 50 200 send 1383-ctlbus;
+#X obj 50 50 receive 1822-ctlbus-get;
+#X obj 50 100 send \$3-ctlbus-1-get;
+#X obj 50 150 receive \$3-ctlbus-1;
+#X obj 50 200 send 1822-ctlbus;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X restore 49 316 pd \$0-receive-ctlbus;
@@ -363,7 +364,7 @@ f 7;
 #X obj 269 634 s \$4-\$1-i;
 #X text 315 110 < [r \$4-preset-cmd] inside;
 #X obj 134 71 tgl 15 0 \$0-schmitt-o \$0-schmitt-i schmitt -44 7 0
-10 -262144 -1 -1 0 1;
+10 #fcfcfc #000000 #000000 0 1;
 #X obj 340 324 receive \$0-ctlbus;
 #X obj 351 352 r \$0-schmitt-o;
 #X obj 351 372 t f f;
@@ -398,6 +399,15 @@ act as a temporary button or as a toggle;
 #X connect 5 0 1 1;
 #X connect 6 0 1 0;
 #X restore 317 587 pd fix-on-preset-recall;
+#X obj 733 68 ossia.model \$1;
+#X obj 733 100 ossia-parameter mode \$0;
+#X obj 733 121 ossia-parameter fix \$0;
+#X obj 733 142 ossia-parameter schmitt \$0;
+#X obj 733 163 ossia-parameter ctlbus \$0;
+#X obj 733 184 ossia-parameter hithresh \$0;
+#X obj 733 205 ossia-parameter lothresh \$0;
+#X obj 733 226 ossia-parameter togglemode \$0;
+#X obj 733 247 ossia-parameter invert \$0;
 #X connect 8 0 10 0;
 #X connect 9 0 74 0;
 #X connect 10 0 78 0;

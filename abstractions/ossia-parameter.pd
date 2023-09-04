@@ -1,0 +1,7 @@
+#N canvas 179 204 436 221 10;
+#X obj 59 65 r \$2-\$1-o;
+#X obj 178 107 s \$2-\$1-i;
+#X obj 178 86 ossia.parameter \$1;
+#X obj 59 86 ossia.remote \$1;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;

@@ -29,6 +29,7 @@ $(ABS)/ctlbus-from-receive.pd \
 $(ABS)/ctlbus-recorder.pd \
 $(ABS)/file-manager.pd \
 $(ABS)/module-preset.pd \
+$(ABS)/ossia-parameter.pd \
 $(ABS)/parameter-simple.pd \
 $(ABS)/parameter-toggle.pd \
 $(ABS)/parameter-trig.pd \

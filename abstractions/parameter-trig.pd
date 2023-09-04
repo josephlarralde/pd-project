@@ -1,11 +1,12 @@
-#N canvas 399 75 939 711 10;
-#X obj 51 61 cnv 15 99 15 empty empty empty 20 9 0 12 -1 -66577 0;
-#X obj 51 70 cnv 15 99 102 empty empty empty 20 12 0 14 -262144 -66577
+#N canvas 174 127 991 711 10;
+#X obj 51 61 cnv 15 99 15 empty empty empty 20 9 0 12 #000000 #404040
+0;
+#X obj 51 70 cnv 15 99 102 empty empty empty 20 12 0 14 #fcfcfc #404040
 0;
 #X obj 50 69 vradio 17 1 0 2 \$0-mode-o \$0-mode-i empty 0 -8 0 10
--262144 -1 -1 0;
-#X obj 51 51 cnv 15 99 17 empty empty \$1 4 9 0 11 -228856 -66577 0
-;
+#fcfcfc #000000 #000000 0;
+#X obj 51 51 cnv 15 99 17 empty empty \$1 4 9 0 11 #dcdcdc #404040
+0;
 #X obj 547 361 s \$0-raw-i;
 #X obj 573 382 s \$0-norm-i;
 #X obj 573 288 loadbang;
@@ -17,7 +18,7 @@
 #X obj 612 445 loadbang;
 #X msg 612 465 0;
 #X obj 637 494 s \$0-mode-i;
-#X floatatom 615 119 5 0 0 0 - - -, f 5;
+#X floatatom 615 119 5 0 0 0 - - - 0;
 #X obj 615 138 t f f;
 #X obj 164 203 r \$0-mode-o;
 #X text 168 52 arguments :;
@@ -108,10 +109,10 @@
 #X restore 241 368 pd schmitt;
 #X obj 320 398 r \$0-invert-o;
 #X obj 612 514 s \$0-invert-i;
-#X floatatom 69 88 2 1 99 0 - #0-ctlbus-i #0-ctlbus-o, f 2;
-#X symbolatom 87 88 10 0 0 0 - #0-ctlname-i #0-ctlname-o, f 10;
-#X floatatom 99 105 8 0 0 0 max/hi #0-max-hi-i #0-max-hi-o, f 8;
-#X floatatom 99 122 8 0 0 0 min/lo #0-min-lo-i #0-min-lo-o, f 8;
+#X floatatom 69 88 2 1 99 0 - \$0-ctlbus-i \$0-ctlbus-o 0;
+#X symbolatom 87 88 10 0 0 0 - \$0-ctlname-i \$0-ctlname-o 0;
+#X floatatom 99 105 8 0 0 0 max/hi \$0-max-hi-i \$0-max-hi-o 0;
+#X floatatom 99 122 8 0 0 0 min/lo \$0-min-lo-i \$0-min-lo-o 0;
 #X obj 615 361 s \$0-ignorezeroes-i;
 #X obj 406 398 r \$0-ignorezeroes-o;
 #N canvas 565 102 558 430 invert-and-ignore-zeroes 0;
@@ -125,15 +126,15 @@
 #X obj 158 162 spigot;
 #X obj 207 122 t f f;
 #X obj 234 142 == 0;
-#X obj 207 103 tgl 15 0 empty empty invert 17 7 0 10 -262144 -1 -1
-0 1;
+#X obj 207 103 tgl 15 0 empty empty invert 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 201 272 spigot;
 #X obj 158 232 t f f;
 #X obj 158 272 spigot;
 #X obj 207 232 t f f;
 #X obj 234 252 == 0;
-#X obj 207 213 tgl 15 0 empty empty ignore_zeroes 17 7 0 10 -262144
--1 -1 0 1;
+#X obj 207 213 tgl 15 0 empty empty ignore_zeroes 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X obj 158 292 sel 0;
 #X connect 0 0 6 0;
 #X connect 2 0 8 0;
@@ -158,14 +159,14 @@
 #X connect 17 1 1 0;
 #X restore 241 420 pd invert-and-ignore-zeroes;
 #X obj 69 71 bng 15 250 50 0 \$0-trig-o \$0-trig-i empty 17 7 0 10
--262144 -1 -1;
+#fcfcfc #000000 #000000;
 #X obj 241 602 t f f;
 #X obj 134 71 tgl 15 0 \$0-schmitt-o \$0-schmitt-i schmitt -44 7 0
-10 -262144 -1 -1 0 1;
-#X floatatom 99 139 8 0 0 0 pow #0-pow-i #0-pow-o, f 8;
-#X floatatom 99 156 8 0 0 0 sin #0-sin-i #0-sin-o, f 8;
+10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 99 139 8 0 0 0 pow \$0-pow-i \$0-pow-o 0;
+#X floatatom 99 156 8 0 0 0 sin \$0-sin-i \$0-sin-o 0;
 #X obj 631 341 tgl 15 0 \$0-ignorezeroes-o \$0-ignorezeroes-i ignore_zeroes
-17 7 0 10 -262144 -1 -1 1 1;
+17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 327 292 r \$0-schmitt-o;
 #X obj 341 348 == 0;
 #X obj 241 348 spigot;
@@ -202,10 +203,10 @@
 #X obj 76 249 s pd-\$0-receive-ctlbus;
 #X obj 49 296 s \$0-ctlbus-get;
 #N canvas 448 72 536 411 \$0-receive-ctlbus 0;
-#X obj 50 50 receive 1476-ctlbus-get;
+#X obj 50 50 receive 1834-ctlbus-get;
 #X obj 50 100 send \$3-ctlbus-1-get;
 #X obj 50 150 receive \$3-ctlbus-1;
-#X obj 50 200 send 1476-ctlbus;
+#X obj 50 200 send 1834-ctlbus;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X restore 49 316 pd \$0-receive-ctlbus;
@@ -224,8 +225,8 @@
 #X connect 8 0 1 3;
 #X restore 615 264 pd create-ctlbus-receiver;
 #X obj 241 203 receive \$0-ctlbus;
-#X obj 52 156 tgl 15 0 \$0-invert-o \$0-invert-i inv 0 -5 0 9 -262144
--1 -1 0 1;
+#X obj 52 156 tgl 15 0 \$0-invert-o \$0-invert-i inv 0 -5 0 9 #fcfcfc
+#000000 #000000 0 1;
 #X text 699 515 < don't invert by default;
 #X obj 142 253 sel 1;
 #X obj 142 274 s \$0-ctlbus-i;
@@ -689,6 +690,15 @@ ax;
 #X obj 430 486 r \$0-min-lo-o;
 #X obj 430 507 r \$0-max-hi-o;
 #X obj 525 340 s \$0-ctlbus-i;
+#X obj 813 65 ossia.model \$1;
+#X obj 813 97 ossia-parameter mode \$0;
+#X obj 813 118 ossia-parameter schmitt \$0;
+#X obj 813 139 ossia-parameter ctlbus \$0;
+#X obj 813 160 ossia-parameter max-hi \$0;
+#X obj 813 181 ossia-parameter min-lo \$0;
+#X obj 813 202 ossia-parameter pow \$0;
+#X obj 813 223 ossia-parameter sin \$0;
+#X obj 813 244 ossia-parameter invert \$0;
 #X connect 6 0 7 0;
 #X connect 7 0 4 0;
 #X connect 7 0 5 0;

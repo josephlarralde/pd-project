@@ -90,6 +90,7 @@
 #X text 83 302 messages :;
 #X text 320 95 < direct link to UI;
 #X text 151 268 < direct link to UI;
+#X obj 331 185 ossia-parameter \$1 \$4;
 #X connect 2 0 6 0;
 #X connect 2 1 5 0;
 #X connect 3 0 2 0;
